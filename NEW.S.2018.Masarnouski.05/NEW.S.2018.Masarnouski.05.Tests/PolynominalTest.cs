@@ -4,7 +4,7 @@ using System;
 namespace NEW.S._2018.Masarnouski._05.Tests
 {
     [TestFixture]
-    public class PolynominalTest
+    sealed class PolynominalTest
     {
         #region EqualsOperator
         [Test]
