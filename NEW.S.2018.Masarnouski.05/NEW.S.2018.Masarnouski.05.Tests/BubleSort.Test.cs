@@ -22,7 +22,7 @@ namespace BubleSort.Tests
                 new int[]{ 11, 130},
                 new int[]{ 0,5,5,9 }
             };
-            BubleSort.Sort(ref jaggedArrayUnsorted);
+            BubleSort.Sort(jaggedArrayUnsorted);
             for (int i = 0; i < jaggedArrayUnsorted.Length; i++)
             {
                 for (int j = 0; j < jaggedArraySorted[i].Length; j++)
@@ -41,7 +41,7 @@ namespace BubleSort.Tests
                 new int[]{ 9,5,5,0 }
             };
 
-            Assert.Throws<ArgumentNullException>(() => BubleSort.Sort(ref jaggedArrayUnsorted));
+            Assert.Throws<ArgumentNullException>(() => BubleSort.Sort(jaggedArrayUnsorted));
         }
 
         [Test]
@@ -50,7 +50,7 @@ namespace BubleSort.Tests
             int[][] jaggedArrayUnsorted = null;
           
 
-            Assert.Throws<ArgumentNullException>(() => BubleSort.Sort(ref jaggedArrayUnsorted));
+            Assert.Throws<ArgumentNullException>(() => BubleSort.Sort(jaggedArrayUnsorted));
         }
         [Test]
         public void Sort_ArgumentLengthIsZeroTest_ArgExceptionReturned()
@@ -58,7 +58,7 @@ namespace BubleSort.Tests
             int[][] jaggedArrayUnsorted = new int[0][]
              {};
 
-            Assert.Throws<ArgumentException>(() => BubleSort.Sort(ref jaggedArrayUnsorted));
+            Assert.Throws<ArgumentException>(() => BubleSort.Sort(jaggedArrayUnsorted));
         }
 
         [Test]
@@ -76,7 +76,8 @@ namespace BubleSort.Tests
                 new int[]{ -5,3,5,0,17},
                 new int[]{ 130, 11}
             };
-            BubleSort.SumRowSort(ref jaggedArrayUnsorted);
+
+            BubleSort.SumRowSort(jaggedArrayUnsorted);
             for (int i = 0; i < jaggedArrayUnsorted.Length; i++)
             {
                 for (int j = 0; j < jaggedArraySorted[i].Length; j++)
@@ -91,7 +92,7 @@ namespace BubleSort.Tests
             int[][] jaggedArrayUnsorted = null;
 
 
-            Assert.Throws<ArgumentNullException>(() => BubleSort.SumRowSort(ref jaggedArrayUnsorted));
+            Assert.Throws<ArgumentNullException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted));
         }
         [Test]
         public void SumRowSort_ArgumentLengthIsZeroTest_ArgExceptionReturned()
@@ -99,7 +100,7 @@ namespace BubleSort.Tests
             int[][] jaggedArrayUnsorted = new int[0][]
              {};
 
-            Assert.Throws<ArgumentException>(() => BubleSort.SumRowSort(ref jaggedArrayUnsorted));
+            Assert.Throws<ArgumentException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted));
         }
     }
 }

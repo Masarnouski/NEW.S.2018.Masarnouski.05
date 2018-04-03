@@ -12,7 +12,7 @@ namespace BubleSort
         /// Sorts the elements in each subarray of a jagged array
         /// </summary>
         /// <param name="jaggedArray"> Unsorted jaggedarray </param>
-        public static void Sort(ref int[][] jaggedArray)
+        public static void Sort(int[][] jaggedArray)
         {
             if (jaggedArray is null)
                 throw new ArgumentNullException(nameof(jaggedArray));
@@ -21,14 +21,14 @@ namespace BubleSort
 
             for (int i = 0; i < jaggedArray.Length; i++)
 
-                Sort(ref jaggedArray[i]);
+                Sort(jaggedArray[i]);
         }
 
         /// <summary>
         /// Sorts in order of increasing sum of subarrays
         /// </summary>
         /// <param name="jaggedArray">Unsorted jaggedarray </param>
-        public static void SumRowSort(ref int[][] jaggedArray)
+        public static void SumRowSort(int[][] jaggedArray)
         {
             if (jaggedArray is null)
                 throw new ArgumentNullException(nameof(jaggedArray));
@@ -51,7 +51,7 @@ namespace BubleSort
             }
         }
 
-        private static void Sort(ref int[] subArray)
+        private static void Sort(int[] subArray)
         {
             if (subArray is null)
              throw new ArgumentNullException(nameof(subArray));

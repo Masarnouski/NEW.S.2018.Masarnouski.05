@@ -106,10 +106,7 @@ namespace NEW.S._2018.Masarnouski._05
         {
             if (polynomial1 is null && polynomial2 is null)
                 return false;
-            if (polynomial1 is null)
-                throw new ArgumentNullException($"Argument {nameof(polynomial1)} must be not null");
-            if (polynomial2 is null)
-                throw new ArgumentNullException($"Argument {nameof(polynomial2)} must be not null");
+           
             return !(polynomial1.Equals(polynomial2));
         }
 
@@ -123,10 +120,7 @@ namespace NEW.S._2018.Masarnouski._05
         {
             if (polynomial1 is null && polynomial2 is null)
                 return true;
-            if (polynomial1 is null)
-                throw new ArgumentNullException($"Argument {nameof(polynomial1)} must be not null");
-            if (polynomial2 is null)
-                throw new ArgumentNullException($"Argument {nameof(polynomial2)} must be not null");
+           
             return polynomial1.Equals(polynomial2);
         }
 
