@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BubleSort
 {
-    public class BubleSort
+    public class BubleSort:IComparer<int[]>
     {
         /// <summary>
         /// Sorts the elements in each subarray of a jagged array
@@ -28,7 +28,7 @@ namespace BubleSort
         /// Sorts in order of increasing sum of subarrays
         /// </summary>
         /// <param name="jaggedArray">Unsorted jaggedarray </param>
-        public static void SumRowSort(int[][] jaggedArray)
+        public static void SumRowSort(int[][] jaggedArray, IComparer<int[]> comparer)
         {
             if (jaggedArray is null)
                 throw new ArgumentNullException(nameof(jaggedArray));
@@ -70,6 +70,11 @@ namespace BubleSort
                 }
             }
 
+        }
+
+        public int Compare(int[] x, int[] y)
+        {
+            throw new NotImplementedException();
         }
     }
 }

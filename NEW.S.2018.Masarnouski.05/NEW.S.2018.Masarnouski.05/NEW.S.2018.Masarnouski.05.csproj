@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buble.Sort.Comparators\Comparator.cs" />
     <Compile Include="BubleSort.cs" />
     <Compile Include="Polynomial.cs" />
     <Compile Include="Program.cs" />
