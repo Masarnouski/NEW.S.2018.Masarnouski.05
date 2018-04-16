@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace NEW.S._2018.Masarnouski._05.Buble.Sort.Comparators
 {
-    public class Comparator : IComparer<int[]>
+    class DelegateComparator : IComparer<int[]>
     {
+        private Comparison<int[]> comparison;
+
+        public DelegateComparator(Comparison<int[]> comparison)
+        {
+            this.comparison = comparison;
+        }
+
         public int Compare(int[] first, int[] second)
         {
-           return first.Sum().CompareTo(second.Sum());
+           return comparison(first, second);
         }
     }
 }
-        
-

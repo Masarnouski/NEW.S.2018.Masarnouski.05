@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buble.Sort.Comparators\Comparator.cs" />
+    <Compile Include="Buble.Sort.Comparators\DelegateComparator.cs" />
     <Compile Include="BubleSort.cs" />
+    <Compile Include="DelegateBubleSort.cs" />
     <Compile Include="Polynomial.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

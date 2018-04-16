@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using NEW.S._2018.Masarnouski._05.Buble.Sort.Comparators;
 
 namespace BubleSort.Tests
 {
@@ -76,8 +77,8 @@ namespace BubleSort.Tests
                 new int[]{ -5,3,5,0,17},
                 new int[]{ 130, 11}
             };
-
-            BubleSort.SumRowSort(jaggedArrayUnsorted);
+            Comparator comparator = new Comparator();
+            BubleSort.SumRowSort(jaggedArrayUnsorted, comparator);
             for (int i = 0; i < jaggedArrayUnsorted.Length; i++)
             {
                 for (int j = 0; j < jaggedArraySorted[i].Length; j++)
@@ -91,16 +92,17 @@ namespace BubleSort.Tests
         {
             int[][] jaggedArrayUnsorted = null;
 
-
-            Assert.Throws<ArgumentNullException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted));
+            Comparator comparator = new Comparator();
+            Assert.Throws<ArgumentNullException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted,comparator));
         }
         [Test]
         public void SumRowSort_ArgumentLengthIsZeroTest_ArgExceptionReturned()
         {
             int[][] jaggedArrayUnsorted = new int[0][]
              {};
+            Comparator comparator = new Comparator();
 
-            Assert.Throws<ArgumentException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted));
+            Assert.Throws<ArgumentException>(() => BubleSort.SumRowSort(jaggedArrayUnsorted,comparator));
         }
     }
 }

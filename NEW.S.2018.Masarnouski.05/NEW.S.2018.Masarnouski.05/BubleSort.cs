@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BubleSort
 {
-    public class BubleSort:IComparer<int[]>
+    public class BubleSort
     {
         /// <summary>
         /// Sorts the elements in each subarray of a jagged array
@@ -36,12 +36,17 @@ namespace BubleSort
             if (jaggedArray.Length < 1)
                 throw new ArgumentException($"JaggedArray {nameof(jaggedArray)} must have at least 1 row");
 
+            SumRowSort(jaggedArray, comparer.Compare);
+        }
+
+        private static void SumRowSort(int[][] jaggedArray, Comparison<int[]> comparison)
+        {
             int[] temp = new int[jaggedArray.Length];
             for (int i = 0; i < jaggedArray.Length - 1; i++)
             {
                 for (int j = i + 1; j < jaggedArray.Length; j++)
                 {
-                    if (jaggedArray[i].Sum() > jaggedArray[j].Sum())
+                    if (comparison(jaggedArray[i],jaggedArray[j]) == 1)
                     {
                         temp = jaggedArray[i];
                         jaggedArray[i] = jaggedArray[j];
@@ -70,11 +75,6 @@ namespace BubleSort
                 }
             }
 
-        }
-
-        public int Compare(int[] x, int[] y)
-        {
-            throw new NotImplementedException();
         }
     }
 }
